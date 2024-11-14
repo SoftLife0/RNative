@@ -3,6 +3,7 @@ import { SafeAreaView, StyleSheet, Text, View } from 'react-native';
 import WelcomeScreen from './app/screens/WelcomeScreen';
 import { StatusBar } from 'react-native';
 import ViewImageScreen from './app/screens/ViewImageScreen';
+import JobList from './app/screens/JobListScreen';
 
 export default function App() {
   return (
@@ -10,6 +11,7 @@ export default function App() {
       <StatusBar style="auto" hidden />
       {/* <WelcomeScreen /> */}
       <ViewImageScreen />
+      {/* <JobList /> */}
     </SafeAreaView>
   );
 }
