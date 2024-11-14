@@ -2,26 +2,21 @@ import React from 'react';
 import { SafeAreaView, StyleSheet, Text, View } from 'react-native';
 import WelcomeScreen from './app/screens/WelcomeScreen';
 import { StatusBar } from 'react-native';
+import ViewImageScreen from './app/screens/ViewImageScreen';
 
 export default function App() {
-
   return (
-    <SafeAreaView>
-    <View>
-      <Text>Open up App.js to start working on your app!</Text>
-      <WelcomeScreen />
-      <StatusBar style="auto" />
-    </View>
+    <SafeAreaView style={styles.container}>
+      <StatusBar style="auto" hidden />
+      {/* <WelcomeScreen /> */}
+      <ViewImageScreen />
     </SafeAreaView>
   );
 }
 
-// const styles = StyleSheet.create({
-//   container: {
-//     flex: 1,
-//     backgroundColor: '#fff',
-//     alignItems: 'center',
-//     justifyContent: 'center',
-//   },
-// })
 
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+  },
+})
