@@ -7,12 +7,7 @@ import JobList from './app/screens/JobListScreen';
 
 export default function App() {
   return (
-    <SafeAreaView style={styles.container}>
-      <StatusBar style="auto" hidden />
-      {/* <WelcomeScreen /> */}
-      <ViewImageScreen />
-      {/* <JobList /> */}
-    </SafeAreaView>
+    <WelcomeScreen />
   );
 }
 
@@ -20,5 +15,6 @@ export default function App() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
+    backgroundColor: '#fff',
   },
 })
