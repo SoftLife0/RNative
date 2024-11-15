@@ -4,23 +4,32 @@ import colors from '../utils/colors'
 import Icon from 'react-native-vector-icons/Ionicons';
 import FontAwesome from 'react-native-vector-icons/FontAwesome';
 import fonts from '../utils/fonts';
+import { useNavigation } from '@react-navigation/native';
 
 export default function LoginScreen() {
+    const navigation = useNavigation();
     const [secureEntry, setSecureEntry] = useState(true);
+
+    const handleGoBack = () => {
+        navigation.goBack();
+    }
 
   return (
     <SafeAreaView style={styles.container}>
-        <View style={{padding: '30'}}>
-            <View>
-                <TouchableOpacity style={styles.backButtonWrapper}>
-                    <Icon name="arrow-back" size={23} color={colors.white} />
-                </TouchableOpacity>
-            </View>
-
+        <View style={{padding: '20'}}>
+            
+            <TouchableOpacity style={styles.backButtonWrapper} onPress={handleGoBack}>
+                <Icon name="arrow-back" size={23} color={colors.white} />
+            </TouchableOpacity>
+            
             <View style={styles.textContainer}>
                 <Text style={styles.subText}>Welcome 👋</Text>
                 <Text style={styles.headingText}>Login to your account</Text>
             </View>
+
+            {/* <View>
+                <Image style={styles.loginImage} source={require('../assets/Central-Uni-logo.png')} />
+            </View> */}
 
             <View style={styles.formContainer}>
                 <View style={styles.inputContainer}>
@@ -32,7 +41,7 @@ export default function LoginScreen() {
                     <Icon name="lock-closed" size={23} color={colors.black} />
                     <TextInput style={styles.textInput} placeholder="Enter Password" secureTextEntry={secureEntry} />
                     <TouchableOpacity onPress={() => setSecureEntry(!secureEntry)}>
-                        <FontAwesome name="eye" size={23} color={colors.black}/>
+                        <FontAwesome name="eye" size={20} color={colors.black}/>
                     </TouchableOpacity>
                 </View>
 
@@ -53,8 +62,8 @@ export default function LoginScreen() {
                 </TouchableOpacity>
 
                 <View style={styles.footerContainer}>
-                    <Text>Dont have an account</Text>
-                    <Text>Create Account</Text>
+                    <Text style={styles.dontText}>Dont have an account</Text>
+                    <Text style={styles.createText}>Create Account</Text>
                 </View>
             </View>
 
@@ -79,7 +88,7 @@ const styles = StyleSheet.create({
         alignItems: 'center',
     },
     textContainer: {
-        marginVertical: 30,
+        marginVertical: 40,
     },
     subText: {
         fontSize: 20,
@@ -103,7 +112,7 @@ const styles = StyleSheet.create({
         paddingVertical: Platform.OS === 'ios' ? 15 : 10,
         flexDirection: 'row',
         alignItems: 'center',
-        marginVertical: 10,
+        marginVertical: 15,
     },
     textInput: {
         flex: 1,
@@ -113,7 +122,7 @@ const styles = StyleSheet.create({
     },
     forgetText: {
         textAlign: 'right',
-        marginTop: 10,
+        marginTop: 15,
         color: colors.black,
         fontWeight: '600',
     },
@@ -160,7 +169,17 @@ const styles = StyleSheet.create({
     footerContainer: {
         flexDirection: 'row',
         justifyContent: 'center',
-        gap: 10,
+        gap: 5,
         marginTop: 20,
+    },
+    dontText: {
+        color: colors.gray,
+        fontWeight: '600',
+    },
+    createText: {
+        color: colors.black,
+        fontWeight: '800',
+        fontFamily: fonts.Bold,
+        textDecorationLine: 'underline',
     }
 })
