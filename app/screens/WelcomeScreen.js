@@ -2,8 +2,14 @@ import React from 'react';
 import { Image, StyleSheet, View, Text, TouchableOpacity, SafeAreaView, StatusBar } from 'react-native';
 import colors from '../utils/colors';
 import fonts from '../utils/fonts';
+import { useNavigation } from '@react-navigation/native';
 
 function WelcomeScreen(props) {
+    const navigation = useNavigation();
+
+    const handleLogin = () => {
+        navigation.navigate('Login')
+    }
 
     return (
         <SafeAreaView style={styles.container} >
@@ -19,7 +25,7 @@ function WelcomeScreen(props) {
             </View>
 
             <View style={styles.buttonContainer}>
-                <TouchableOpacity style={[styles.buttonWrapper, styles.loginButtonWrapper]} onPress={() => props.navigation.navigate('JobList')}>
+                <TouchableOpacity style={[styles.buttonWrapper, styles.loginButtonWrapper]} onPress={handleLogin}>
                     <Text style={[styles.buttonText, styles.loginButtonText]}>Login</Text>
                 </TouchableOpacity>
                 <TouchableOpacity style={[styles.buttonWrapper, styles.signButtonWrapper]} onPress={() => props.navigation.navigate('JobList')}>
@@ -40,8 +46,7 @@ const styles = StyleSheet.create({
     topNav: {
         flexDirection: 'row',
         justifyContent: 'space-between',
-        paddingHorizontal: 20,
-        paddingVertical: 20,
+        padding: 23
     },
     imageContainer: {
         justifyContent: 'center',

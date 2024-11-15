@@ -1,11 +1,9 @@
 import React from 'react';
-import { SafeAreaView, StyleSheet, Text, View } from 'react-native';
-import WelcomeScreen from './app/screens/WelcomeScreen';
-import { StatusBar } from 'react-native';
-import ViewImageScreen from './app/screens/ViewImageScreen';
-import JobList from './app/screens/JobListScreen';
+import { StyleSheet} from 'react-native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { NavigationContainer } from '@react-navigation/native';
+import WelcomeScreen from './app/screens/WelcomeScreen';
+import LoginScreen from './app/screens/LoginScreen';
 
 const Stack = createNativeStackNavigator();
 
@@ -14,7 +12,7 @@ export default function App() {
     <NavigationContainer>
       <Stack.Navigator screenOptions={{headerShown: false}}>
         <Stack.Screen name="Welcome" component={WelcomeScreen} />
-        {/* <Stack.Screen name="JobList" component={JobList} /> */}
+        <Stack.Screen name="Login" component={LoginScreen} />
         {/* <Stack.Screen name="ViewImage" component={ViewImageScreen} /> */}
       </Stack.Navigator>
     </NavigationContainer>
