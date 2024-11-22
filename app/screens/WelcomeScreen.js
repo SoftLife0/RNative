@@ -1,8 +1,10 @@
 import React from 'react';
-import { Image, StyleSheet, View, Text, TouchableOpacity, SafeAreaView, StatusBar } from 'react-native';
+import { Image, StyleSheet, View, Text, TouchableOpacity } from 'react-native';
 import colors from '../utils/colors';
 import fonts from '../utils/fonts';
 import { useNavigation } from '@react-navigation/native';
+import { SafeAreaView } from 'react-native-safe-area-context';
+import { StatusBar } from 'expo-status-bar';
 
 function WelcomeScreen(props) {
     const navigation = useNavigation();

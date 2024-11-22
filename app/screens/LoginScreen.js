@@ -1,10 +1,12 @@
 import React, { useState } from 'react';
-import { SafeAreaView, StyleSheet, StatusBar, Text, View, TouchableOpacity, TextInput, Platform, Image } from 'react-native'
+import { StyleSheet, Text, View, TouchableOpacity, TextInput, Platform, Image } from 'react-native'
 import colors from '../utils/colors'
 import Icon from 'react-native-vector-icons/Ionicons';
 import FontAwesome from 'react-native-vector-icons/FontAwesome';
 import fonts from '../utils/fonts';
 import { useNavigation } from '@react-navigation/native';
+import { SafeAreaView } from 'react-native-safe-area-context';
+import { StatusBar } from 'expo-status-bar';
 
 export default function LoginScreen() {
     const navigation = useNavigation();
@@ -67,9 +69,8 @@ export default function LoginScreen() {
                 </View>
             </View>
 
-
-        <StatusBar style="auto" />
-      </View>
+            <StatusBar style="auto" />
+         </View>
     </SafeAreaView>
   )
 }
