@@ -55,7 +55,6 @@ const styles = StyleSheet.create({
     borderRadius: 10,
     marginTop: 20,
     alignItems: 'center',
-    justifyContent: 'center',
     width: '100%',
   },
   overlayButtonText: {
