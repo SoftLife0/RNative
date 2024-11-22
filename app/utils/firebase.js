@@ -3,17 +3,18 @@ import { initializeApp } from "firebase/app";
 import { getAuth } from "firebase/auth";
 import { getFirestore } from "firebase/firestore";
 import { getStorage } from "firebase/storage"; // Optional: Only if you're using storage
-
+import { FIREBASE_API_KEY, FIREBASE_AUTH_DOMAIN, FIREBASE_PROJECT_ID, FIREBASE_STORAGE_BUCKET, FIREBASE_MESSAGING_SENDER_ID, FIREBASE_APP_ID, FIREBASE_MEASUREMENT_ID } from '@env';
 // Your Firebase configuration (replace with your actual project details)
+
 const firebaseConfig = {
-  apiKey: "AIzaSyAXIQdIL_mMFMIKCxM8V8iG3veBusLR5RU",
-  authDomain: "native-721a5.firebaseapp.com",
-  projectId: "native-721a5",
-  storageBucket: "native-721a5.firebasestorage.app",
-  messagingSenderId: "772516062950",
-  appId: "1:772516062950:web:2f5cbd4df5b782cd65fd27",
-  measurementId: "G-7Z6KCF73JS",
-};
+    apiKey: FIREBASE_API_KEY,
+    authDomain: FIREBASE_AUTH_DOMAIN,
+    projectId: FIREBASE_PROJECT_ID,
+    storageBucket: FIREBASE_STORAGE_BUCKET,
+    messagingSenderId: FIREBASE_MESSAGING_SENDER_ID,
+    appId: FIREBASE_APP_ID,
+    measurementId: FIREBASE_MEASUREMENT_ID,
+  };
 
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
