@@ -5,12 +5,18 @@ import fonts from '../utils/fonts';
 import { useNavigation } from '@react-navigation/native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { StatusBar } from 'expo-status-bar';
+import logo from '../assets/Central-Uni-logo.png';
+
 
 function WelcomeScreen(props) {
     const navigation = useNavigation();
 
     const handleLogin = () => {
         navigation.navigate('Login')
+    }
+
+    const handleSignUp = () => {
+        navigation.navigate('SignUp')
     }
 
     return (
@@ -21,7 +27,7 @@ function WelcomeScreen(props) {
             </View>
 
             <View style={styles.imageContainer}>
-                <Image style={styles.image} source={require('../assets/bg.png')} />
+                <Image style={styles.image} source={logo} />
                 <Text style={styles.title}>Central Connect</Text>
                 <Text style={styles.subTitle}>Lorem ipsum odor amet, consectetuer adipiscing elit. Eros lacus quam venenatis conubia, ac finibus lacus.</Text>
             </View>
@@ -30,7 +36,7 @@ function WelcomeScreen(props) {
                 <TouchableOpacity style={[styles.buttonWrapper, styles.loginButtonWrapper]} onPress={handleLogin}>
                     <Text style={[styles.buttonText, styles.loginButtonText]}>Login</Text>
                 </TouchableOpacity>
-                <TouchableOpacity style={[styles.buttonWrapper, styles.signButtonWrapper]} onPress={() => props.navigation.navigate('JobList')}>
+                <TouchableOpacity style={[styles.buttonWrapper, styles.signButtonWrapper]} onPress={handleSignUp}>
                     <Text style={[styles.buttonText, styles.signupButtonText]}>Sign Up</Text>
                 </TouchableOpacity>
             </View>
@@ -56,8 +62,9 @@ const styles = StyleSheet.create({
         marginVertical: 60,
     },
     image: {
-        width: 250,
-        height: 270,
+        width: '90%',
+        height: 150,
+        resizeMode: 'contain',
     },
     title: {
         fontSize: 40,

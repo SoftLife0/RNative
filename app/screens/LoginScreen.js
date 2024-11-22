@@ -16,6 +16,10 @@ export default function LoginScreen() {
         navigation.goBack();
     }
 
+    const handleCreate = () => {
+        navigation.navigate('SignUp');
+    }
+
   return (
     <SafeAreaView style={styles.container}>
         <View style={{padding: '20'}}>
@@ -28,10 +32,6 @@ export default function LoginScreen() {
                 <Text style={styles.subText}>Welcome 👋</Text>
                 <Text style={styles.headingText}>Login to your account</Text>
             </View>
-
-            {/* <View>
-                <Image style={styles.loginImage} source={require('../assets/Central-Uni-logo.png')} />
-            </View> */}
 
             <View style={styles.formContainer}>
                 <View style={styles.inputContainer}>
@@ -65,7 +65,7 @@ export default function LoginScreen() {
 
                 <View style={styles.footerContainer}>
                     <Text style={styles.dontText}>Dont have an account</Text>
-                    <Text style={styles.createText}>Create Account</Text>
+                    <Text style={styles.createText} onPress={handleCreate}>Create Account</Text>
                 </View>
             </View>
 
@@ -108,7 +108,7 @@ const styles = StyleSheet.create({
     inputContainer: {
         borderColor: colors.black,
         borderWidth: 1,
-        borderRadius: 100,
+        borderRadius: 10,
         paddingHorizontal: 15,
         paddingVertical: Platform.OS === 'ios' ? 15 : 10,
         flexDirection: 'row',
@@ -130,7 +130,7 @@ const styles = StyleSheet.create({
     buttonWrapper: {
         backgroundColor: colors.black,
         paddingVertical: Platform.OS === 'ios' ? 20 : 15,
-        borderRadius: 100,
+        borderRadius: 10,
         marginTop: 20,
         alignItems: 'center',
     },
@@ -149,7 +149,7 @@ const styles = StyleSheet.create({
     googleButton: {
         borderColor: colors.black,
         borderWidth: 1,
-        borderRadius: 100,
+        borderRadius: 10,
         paddingVertical: Platform.OS === 'ios' ? 20 : 15,
         marginTop: 20,
         alignItems: 'center',
@@ -181,6 +181,5 @@ const styles = StyleSheet.create({
         color: colors.black,
         fontWeight: '800',
         fontFamily: fonts.Bold,
-        textDecorationLine: 'underline',
     }
 })
